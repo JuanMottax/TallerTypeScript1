@@ -1,0 +1,34 @@
+#datos{
+    text-align: center;
+}
+
+
+#fotos{
+    border: 1px solid black;
+    margin-top: 10px;  
+}
+
+td{
+    border: 1px solid grey;
+    
+    border-left: grey;
+    border-right: grey;
+    padding-right: 180px; 
+}
+
+.titulo{
+    background-color: black;
+    color: white;
+}
+#clases{
+    border: 1px solid black;
+    margin-top: 10px;  
+}
+
+.pic{
+    height: 300px;
+    width: 100 px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
