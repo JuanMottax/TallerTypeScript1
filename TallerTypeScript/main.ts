@@ -1,8 +1,11 @@
 import { Course } from './course.js';
+import {Estudiante} from './estudiante.js';
 
 import { dataCourses } from './dataCourses.js';
+import { dataEstudiante } from './dataEstudiante.js';
 
 let coursesTbody: HTMLElement = document.getElementById('courses')!;
+let estudiantesTbody: HTMLElement = document.getElementById('estudiantes')!;
 const btnfilterByName: HTMLElement = document.getElementById("button-filterByName")!;
 const inputSearchBox: HTMLInputElement = <HTMLInputElement> document.getElementById("search-box")!;
 const totalCreditElm: HTMLElement = document.getElementById("total-credits")!;
@@ -11,6 +14,7 @@ btnfilterByName.onclick = () => applyFilterByName();
 
 
 renderCoursesInTable(dataCourses);
+renderEstudiantesInTable(dataEstudiante)
 
 totalCreditElm.innerHTML = `${getTotalCredits(dataCourses)}`
 
@@ -25,6 +29,16 @@ function renderCoursesInTable(courses: Course[]): void {
     coursesTbody.appendChild(trElement);
   });
 }
+
+function renderEstudiantesInTable(estudiantes: Estudiante[]): void {
+    console.log('Desplegando info de estudiante');
+    estudiantes.forEach((estudiante) => {
+      let trElement = document.createElement("tr");
+      trElement.innerHTML = `<td>${estudiante.name}</td>
+                             <td>${estudiante.value}</td>`;
+      estudiantesTbody.appendChild(trElement);
+    });
+  }
  
 
  
